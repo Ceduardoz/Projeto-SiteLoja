@@ -1,0 +1,136 @@
+/* Reseta estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background: #202024;
+    padding: 20px 0;
+  }
+  
+  header .logo {
+    color: #6c63ff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  header nav ul li {
+    margin-left: 20px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #6c63ff;
+    font-weight: bold;
+  }
+  
+  /* Seção Hero */
+  .hero {
+    background: url('img/arte\ cac\ do\ rangel.png') no-repeat center center/cover;
+    height: 800px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content .btn {
+    padding: 10px 20px;
+    background: #202024;
+    color: #6c63ff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  /* Seção Eventos */
+  .eventos {
+    padding: 50px 0;
+    background: #f4f4f4;
+  }
+  
+  .eventos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .evento {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .evento img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .evento h3 {
+    margin: 15px 0;
+  }
+  
+  .evento button {
+    padding: 10px 20px;
+    background: #202024;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .evento button:hover {
+    background: #202024;
+  }
+  
+  /* Rodapé */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  

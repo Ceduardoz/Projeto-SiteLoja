@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--Cadastro-->
+    <div class="container">
+            <!--Inicio do forms-->
+        <div class="login-img">
+            <img src="img-cadastro/img-login.PNG" alt="image">
+        </div>
+            <!--login-->
+            <div class="form">
+                <form action="usuarios.php" method="post" id="cadastro-form">
+                <!--header do forms-->
+                <div class="titulos-header">
+                    <div class="titulo-form">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+
+                <!--Inputs-->
+                <div class="input-grup">
+                    <input type="hidden" name="action" value="login">
+                    
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu E-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Senha">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="cadastrar">
+                        <p>Não tem cadastro? <a href="cadastro.html">cadastrar</a></p>
+                    </div>
+                
+                <div class="continue-button">
+                    <button id="button-continuar" type="submit"><a href="/index.html">Continuar</a></button>
+                </div>
+            </form>
+            <!--Fim do forms--> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

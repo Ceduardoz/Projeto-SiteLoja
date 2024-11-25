@@ -1,0 +1,99 @@
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+  }
+  
+  /* Compra de Ingressos */
+  .compra {
+    padding: 50px 0;
+    background: #fff;
+  }
+  
+  .compra h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Informações do Evento */
+  .evento-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .evento-info img {
+    width: 50%;
+    object-fit: cover;
+  }
+  
+  .evento-detalhes {
+    padding: 20px;
+    width: 50%;
+  }
+  
+  .evento-detalhes h3 {
+    margin-bottom: 10px;
+  }
+  
+  .evento-detalhes p {
+    margin-bottom: 5px;
+  }
+  
+  /* Formulário de Compra */
+  .form-compra {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .form-compra h3 {
+    margin-bottom: 20px;
+  }
+  
+  .form-compra label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .form-compra input,
+  .form-compra select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-compra .btn {
+    background: #202024;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-compra .btn:hover {
+    transition-duration: 0.5s;
+    background: #6c63ff;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .evento-info {
+      flex-direction: column;
+    }
+  
+    .evento-info img,
+    .evento-detalhes {
+      width: 100%;
+    }
+  }
+  

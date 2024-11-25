@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--Cadastro-->
+    <div class="container">
+            <!--Inicio do forms-->
+        <div class="cadastro-img">
+            <img src="img-cadastro/cadastro-img.png" alt="image">
+        </div>
+            <!--login-->
+            <div class="form">
+                <form action="usuarios.php" method="post" id="cadastro-form">
+                <!--header do forms-->
+                <div class="titulos-header">
+                    <div class="titulo-form">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+
+                <!--Inputs-->
+                <div class="input-grup">
+                    <input type="hidden" name="action" value="login">
+
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="Nome" name="nome" placeholder="Digite seu nome Completo" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input type="number" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="telefone">Telefone</label>
+                        <input type="number" id="tel" name="tel" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu E-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Senha">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="confirm-senha">Confirmar Senha</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua Senha" required>
+                    </div>
+                </div>
+                <!--Escolha de genero-->
+                <div class="genero">
+                    <div class="titulo-genero">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="genero-grup">
+                        <div class="input-genero">
+                            <input type="radio" name="feminino" id="genero">
+                            <label for="feminino">Feminino</label>
+                        </div>
+                        <div class="input-genero">
+                            <input type="radio" name="masculino" id="genero">
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div class="input-genero">
+                            <input type="radio" name="outros" id="genero">
+                            <label for="outros">Outros</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button id="button-continuar" type="submit"><a href="/index.html">Continuar</a></button>
+                </div>
+            </form>
+            <!--Fim do forms de cadastro--> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

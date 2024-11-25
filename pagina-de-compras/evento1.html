@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Ingressos</title>
+  <link rel="stylesheet" href="eventos.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Bilheteria Digital</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="compra">
+    <div class="container">
+      <h2>Comprar Ingressos</h2>
+
+      <!-- Informações do Evento -->
+      <div class="evento-info">
+        <img src="/img/arte cac do rangel.png" alt="Imagem do Evento">
+        <div class="evento-detalhes">
+          <h3>CAC do Rangel</h3>
+          <p><strong>Data:</strong> 25/11/2024</p>
+          <p><strong>Local:</strong> São Paulo</p>
+          <p><strong>Descrição:</strong> Um show imperdível com os maiores sucessos.</p>
+        </div>
+      </div>
+
+      <!-- Formulário de Compra -->
+      <form class="form-compra" action="compra.php" method="POST">
+        <h3>Selecione seus ingressos</h3>
+    
+        <label for="quantidade">Quantidade de Ingressos:</label>
+        <select id="quantidade" name="quantidade" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    
+        <label for="tipo">Tipo de Ingresso:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="pista">Pista - R$ 100,00</option>
+            <option value="vip">VIP - R$ 200,00</option>
+            <option value="camarote">Camarote - R$ 300,00</option>
+        </select>
+    
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+    
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+    
+        <label for="pagamento">Forma de Pagamento:</label>
+        <select id="pagamento" name="pagamento" required>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="boleto">Boleto Bancário</option>
+            <option value="pix">PIX</option>
+        </select>
+    
+        <button type="submit" class="btn">Finalizar Compra</button>
+    </form>
+    
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Bilheteria Digital. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
