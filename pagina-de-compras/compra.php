@@ -77,9 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $pagamento = $_POST['pagamento'];
     
-    // O ID do evento deve ser fornecido no formulário, ou você pode definir um evento padrão.
-    // Exemplo: Evento de ID 1
-    $evento_id = 1 ;  // Agora o ID do evento será enviado pelo formulário.
+    
+    $evento_id = 1 ;
 
     processarCompra($evento_id, $nome, $email, $quantidade, $tipo, $pagamento);
 }
