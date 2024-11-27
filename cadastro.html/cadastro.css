@@ -175,7 +175,7 @@ body {
 }
 
 @media screen and (max-width: 1330px){
-    .cadastro-img {
+    .cadastro-img, .login-img {
         display: none;
     }
 

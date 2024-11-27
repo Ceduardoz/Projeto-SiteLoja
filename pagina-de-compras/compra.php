@@ -49,21 +49,33 @@ function atualizarIngressos($conn, $evento_id, $quantidade) {
 function processarCompra($evento_id, $nome, $email, $quantidade, $tipo, $pagamento) {
     $conn = conectarBanco();
 
-    // Verifica se os ingressos estão disponíveis
+    // Verifica os ingressos disponíveis
     if (verificarIngressosDisponiveis($conn, $evento_id, $quantidade)) {
-        // Registra a compra no banco de dados
+        // Registra a compra
         if (registrarCompra($conn, $evento_id, $nome, $email, $quantidade, $tipo, $pagamento)) {
-            // Atualiza a quantidade de ingressos no banco de dados
+            // Atualiza a quantidade de ingressos 
             if (atualizarIngressos($conn, $evento_id, $quantidade)) {
-                echo "Compra realizada com sucesso!";
+                echo "<script>
+                        alert('Compra realizada com sucesso!');
+                        window.location.href = '../index.html'; 
+                      </script>";// Recarga a página principal;
             } else {
-                echo "Erro ao atualizar a quantidade de ingressos!";
+                echo "<script>
+                        alert('Erro ao atualizar a quantidade de ingressos!');
+                        window.location.href = 'evento$evento_id.html'; 
+                      </script>";// Recarga a página do evento atual;
             }
         } else {
-            echo "Erro ao registrar a compra!";
+            echo "<script>
+                    alert('Erro ao registrar a compra!');
+                    window.location.href = 'evento$evento_id.html'; 
+                  </script>";// Recarga a página do evento atual;
         }
     } else {
-        echo "Ingressos esgotados!";
+        echo "<script>
+                alert('Ingressos esgotados!');
+                window.location.href = '../index.html'; 
+              </script>";// Recarga a página principal;
     }
 
     $conn->close();
@@ -71,15 +83,13 @@ function processarCompra($evento_id, $nome, $email, $quantidade, $tipo, $pagamen
 
 // Processar o formulário
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $evento_id = $_POST['evento_id']; // Recebe o evento_id do formulário
     $quantidade = $_POST['quantidade'];
     $tipo = $_POST['tipo'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $pagamento = $_POST['pagamento'];
     
-    
-    $evento_id = 1 ;
-
     processarCompra($evento_id, $nome, $email, $quantidade, $tipo, $pagamento);
 }
 ?>

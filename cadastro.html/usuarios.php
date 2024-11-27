@@ -52,21 +52,26 @@ function loginUsuario($conn, $dados) {
     $email = mysqli_real_escape_string($conn, $dados['email']);
     $senha = $dados['password'];
 
-    // Consultar o e-mail no banco de dados
-    $sql = "SELECT senha FROM usuarios WHERE email = '$email'";
+    // Consulta
+    $sql = "SELECT senha, is_admin FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $result = mysqli_query($conn, $sql);
-
-    // Verificar se o usuário foi encontrado
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
         $senha_hash = $row['senha'];
+        $is_admin = $row['is_admin'];
 
-        // Verifica a senha
         if (password_verify($senha, $senha_hash)) {
-            // Redirecionamento para a página inicial
-            header("Location: ../index.html");
-            exit(); 
+            // Redirecionamento
+            if ($is_admin == 1) {
+                echo "<script>window.location.href = 'admin/admin.html';</script>"; // Página de administrador
+            } else {
+                echo "<script>window.location.href = '../index.html';</script>"; // Página de usuário comum
+            }
+            exit();
         } else {
             echo "<script>alert('Erro: Senha incorreta.');</script>";
             echo "<script>window.history.back();</script>";
@@ -76,6 +81,8 @@ function loginUsuario($conn, $dados) {
         echo "<script>window.history.back();</script>";
     }
 }
+
+
 
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
